@@ -1,0 +1,25 @@
+<div>
+  <table class="table">
+    <tr>
+      <th>Title</th>
+      <th>Length</th>
+      <th>Rating</th>
+      <th></th>
+    </tr>
+    <tr ng-repeat="movie in model.movies">
+      <td>{{movie.title}}</td>
+      <td>{{movie.length}}</td>
+      <td>{{movie.rating}}</td>
+      <td>
+        <div class="btn-grp">
+          <div class="btn btn-default" ng-click="model.upVote(movie)">
+            <span class="glyphicon glyphicon-plus"></span>
+          </div>
+          <div class="btn btn-default" ng-click="model.downVote(movie)">
+            <span class="glyphicon glyphicon-minus"></span>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
