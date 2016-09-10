@@ -1,5 +1,5 @@
 (function () {
-  "use strict"
+"use strict"
 function fetchMovies($http) {
   return $http.get("movies.json")
     .then(function (response){
@@ -24,6 +24,9 @@ function controller($http) {
         movie.rating -= 1
       }
     }
+    model.goTo = function(id) {
+      model.$router.navigate(["Details", {id: id}, "Overview"])
+    }
   }
 
 angular
@@ -31,7 +34,9 @@ angular
   .component("movieList", {
     templateUrl: "movie-list.componenent.html",
     controllerAs: "model",
-    controller: ["$http", controller]
+    controller: ["$http", controller],
+    bindings: {
+      "$router": "<"
+    }
   })
-
 })()

@@ -15,14 +15,15 @@
         </movie-rating>
       </td>
       <td>
-        <div class="btn-grp">
           <div class="btn btn-default" ng-click="model.upVote(movie)">
             <span class="glyphicon glyphicon-plus"></span>
           </div>
           <div class="btn btn-default" ng-click="model.downVote(movie)">
             <span class="glyphicon glyphicon-minus"></span>
           </div>
-        </div>
+          <button ng-click="model.goTo(movie.id)" class="btn btn-default">
+            <span class="glyphicon glyphicon-zoom-in"></span>
+          </button>
       </td>
     </tr>
   </table>
